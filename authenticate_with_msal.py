@@ -12,10 +12,13 @@ def getAuthenticatedSession(envJson: str):
     config = json.load(open(envJson))
 
     environmentURI = config["environmentURI"]
-    scope = [environmentURI + '/' + config["scopeSuffix"]]
+    scope = [environmentURI + '/' + config["scopeSuffix"]] 
+    print("scope:")
+    print(scope)
     clientID = config["clientID"]
     authority = config["authorityBase"] + config["tenantID"]
-
+    print(clientID)
+    print(authority)
     app = msal.PublicClientApplication(
         clientID, authority=authority,
         # allow_broker=True,  # If opted in, you will be guided to meet the prerequisites, when applicable
@@ -48,7 +51,6 @@ def getAuthenticatedSession(envJson: str):
         session = requests.Session()
         session.headers.update(dict(Authorization='Bearer {}'.format(result['access_token'])))
         session.headers.update({'OData-MaxVersion': '4.0', 'OData-Version': '4.0', 'If-None-Match': 'null', 'Accept': 'application/json'})
-
         return session, environmentURI
 
     else:

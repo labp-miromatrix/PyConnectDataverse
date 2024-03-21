@@ -7,12 +7,12 @@ PathToEnvironmentJSON = "example-env.json"
 authentication = authenticate_with_msal.getAuthenticatedSession(PathToEnvironmentJSON)
 session = authentication[0]
 environmentURI = authentication[1]
-
+print("Authentication end")
 # a test request to the URI
 request_uri = f'{environmentURI}api/data/v9.2/systemusers?$top=1&$select=internalemailaddress'
 
 r = session.get(request_uri)
-
+print("Session2 end")
 if r.status_code != 200:
     print("Request failed. Error code:")
     raw = r.content.decode('utf-8')

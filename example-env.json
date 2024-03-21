@@ -1,7 +1,7 @@
 { 
-    "clientID": "<CLIENT OR APP ID>",
-    "tenantID": "<MICROSOFT TENANT ID>",
-    "environmentURI": "https://<BASE DYNAMICS INSTANCE URL>/",
+    "clientID": "98806f9d-26d1-402e-8039-e5e0e35bd7f6",
+    "tenantID": "2bf92985-ece1-4576-a075-658432b22ec2",
+    "environmentURI": "https://org727ba7ed.crm.dynamics.com",
     "authorityBase": "https://login.microsoftonline.com/",
     "scopeSuffix": "user_impersonation"
 }
